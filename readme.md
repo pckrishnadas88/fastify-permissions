@@ -2,7 +2,7 @@
 
 > 🔐 Route-level permission middleware for Fastify — supports custom permission checks
 
-[![license](https://img.shields.io/github/license/Ypckrishnadas88/fastify-permissions)](./LICENSE)
+[![license](https://img.shields.io/github/license/pckrishnadas88/fastify-permissions)](./LICENSE)
 
 ---
 
