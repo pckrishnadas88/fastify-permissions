@@ -1,6 +1,6 @@
 {
   "name": "fastify-permissions",
-  "version": "1.0.03",
+  "version": "1.0.04",
   "description": "A Fastify plugin for route-level permissions — supports custom permission checks",
   "type": "module",
   "main": "plugin/index.js",
