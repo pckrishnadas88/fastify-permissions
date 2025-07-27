@@ -5,7 +5,8 @@
   "type": "module",
   "main": "plugin/index.js",
   "scripts": {
-    "dev": "node examples/index.js"
+    "dev": "node examples/index.js",
+    "test": "node --test"
   },
   "exports": "./plugin/index.js",
   "keywords": ["fastify", "permissions", "rbac", "middleware", "plugin"],

@@ -193,4 +193,10 @@ https://github.com/pckrishnadas88/fastify-permissions
 
 ## License
 
+## Run tests
+
+```bash
+npm test
+```
+
 MIT License © 2025 Krishnadas P.C
