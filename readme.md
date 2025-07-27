@@ -18,19 +18,16 @@
 
 ## 📦 Setup
 
-Clone the repository and install dependencies:
-
 ```bash
-git clone https://github.com/pckrishnadas88/fastify-permissions.git
-cd fastify-permissions
-npm install
+npm i fastify-permissions
 ```
 
 ## 🚀 Usage
 ### Register the plugin with custom permission checks:
 ```js
 import Fastify from 'fastify'
-import fastifyPermissions from './src/index.js'
+import fastifyPermissions from 'fastify-permissions'
+
 
 const app = Fastify()
 
