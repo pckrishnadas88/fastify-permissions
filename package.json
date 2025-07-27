@@ -1,0 +1,16 @@
+{
+  "name": "fastify-permissions",
+  "version": "1.0.0",
+  "description": "A Fastify plugin for route-level permissions",
+  "type": "module",
+  "main": "plugin/index.js",
+  "scripts": {
+    "dev": "node examples/index.js"
+  },
+  "author": "krishnadas pc",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^5.4.0",
+    "fastify-plugin": "^4.5.0"
+  }
+}

@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+.env
+coverage
+
+# Node
+node_modules
+npm-debug.log
+.env
+.DS_Store
+
+# VSCode
+.vscode
+
+# Tests
+coverage
