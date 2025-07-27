@@ -2,8 +2,7 @@
 
 > 🔐 Route-level permission middleware for Fastify — supports custom permission checks, role guards, and RBAC-style control.
 
-[![license](https://img.shields.io/github/license/YOUR_GITHUB/fastify-permissions)](./LICENSE)
-[![CI](https://github.com/YOUR_GITHUB/fastify-permissions/actions/workflows/test.yml/badge.svg)](https://github.com/YOUR_GITHUB/fastify-permissions)
+[![license](https://img.shields.io/github/license/Ypckrishnadas88/fastify-permissions)](./LICENSE)
 
 ---
 
@@ -23,7 +22,7 @@
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR_GITHUB/fastify-permissions.git
+git clone https://github.com/pckrishnadas88/fastify-permissions.git
 cd fastify-permissions
 npm install
 ```
