@@ -1,7 +1,8 @@
 # fastify-permissions
 
 > 🔐 Route-level permission middleware for Fastify — supports custom permission checks
-
+[![npm version](https://img.shields.io/npm/v/fastify-permissions)](https://www.npmjs.com/package/fastify-permissions)
+[![npm downloads](https://img.shields.io/npm/dm/fastify-permissions)](https://www.npmjs.com/package/fastify-permissions)
 [![license](https://img.shields.io/github/license/pckrishnadas88/fastify-permissions)](./LICENSE)
 
 ---
