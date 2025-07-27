@@ -191,12 +191,14 @@ If you find this plugin useful, give it a ⭐ on GitHub!
 
 https://github.com/pckrishnadas88/fastify-permissions
 
-## License
 
 ## Run tests
 
 ```bash
 npm test
 ```
+
+## License
+
 
 MIT License © 2025 Krishnadas P.C
