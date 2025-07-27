@@ -1,6 +1,6 @@
 # fastify-permissions
 
-> 🔐 Route-level permission middleware for Fastify — supports custom permission checks, role guards, and RBAC-style control.
+> 🔐 Route-level permission middleware for Fastify — supports custom permission checks
 
 [![license](https://img.shields.io/github/license/Ypckrishnadas88/fastify-permissions)](./LICENSE)
 
@@ -12,8 +12,7 @@
 - ✅ Register custom permission checks (e.g. `isAdmin`, `isAuthenticated`)
 - ✅ Supports multiple permissions per route
 - ✅ Denies requests with a customizable `403 Forbidden` error
-- ✅ Compatible with `fastify` v4 and v5
-- ✅ Simple RBAC/ABAC integration
+- ✅ Compatible with `fastify` v5
 
 ---
 

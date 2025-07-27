@@ -5,7 +5,7 @@ const app = Fastify()
 
 // Fake auth with req.user
 app.addHook('onRequest', async (req) => {
-  req.user = { id: 1, role: 'admins' }
+  req.user = { id: 1, role: 'admin' }
 })
 
 
