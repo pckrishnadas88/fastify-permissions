@@ -1,14 +1,24 @@
 {
   "name": "fastify-permissions",
   "version": "1.0.0",
-  "description": "A Fastify plugin for route-level permissions",
+  "description": "A Fastify plugin for route-level permissions — supports custom permission checks",
   "type": "module",
   "main": "plugin/index.js",
   "scripts": {
     "dev": "node examples/index.js"
   },
-  "author": "krishnadas pc",
+  "exports": "./plugin/index.js",
+  "keywords": ["fastify", "permissions", "rbac", "middleware", "plugin"],
+  "author": "Krishnadas P.C <pckrishnadas88@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pckrishnadas88/fastify-permissions"
+  },
+  "bugs": {
+    "url": "https://github.com/pckrishnadas88/fastify-permissions/issues"
+  },
+  "homepage": "https://github.com/pckrishnadas88/fastify-permissions#readme",
   "dependencies": {
     "fastify": "^5.4.0",
     "fastify-plugin": "^4.5.0"
