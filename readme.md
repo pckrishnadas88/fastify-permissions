@@ -6,6 +6,9 @@
 
 [![npm downloads](https://img.shields.io/npm/dm/fastify-permissions)](https://www.npmjs.com/package/fastify-permissions)
 
+![Test](https://github.com/pckrishnadas88/fastify-permissions/actions/workflows/test.yml/badge.svg)
+
+
 [![license](https://img.shields.io/github/license/pckrishnadas88/fastify-permissions)](./LICENSE)
 
 ---
