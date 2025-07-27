@@ -23,48 +23,154 @@ npm i fastify-permissions
 ```
 
 ## 🚀 Usage
-### Register the plugin with custom permission checks:
+---
+
+## Usage
+
+### Register Plugin
+
 ```js
 import Fastify from 'fastify'
 import fastifyPermissions from 'fastify-permissions'
 
-
 const app = Fastify()
 
-// Inject mock user
+// Add a fake user to the request
 app.addHook('onRequest', async (req) => {
-  req.user = { role: 'admin' }
+  const role = req.headers['x-role'] || 'guest'
+  req.user = { id: 1, role }
 })
 
-// Register with permission conditions
-await app.register(fastifyPermissions, {
+app.register(fastifyPermissions, {
   conditions: {
     isAdmin: async (req) => req.user?.role === 'admin',
     isAuthenticated: async (req) => !!req.user,
+    isPublic: async (_) => true,
+    isManager: async (req) => req.user?.role === 'manager'
   }
 })
-```
-## Add permissions to routes:
 
-```js
 app.get('/admin', {
   config: {
     permissions: ['isAdmin']
   },
   handler: async (req, reply) => {
-    return { message: 'Welcome admin' }
+    reply.send({ msg: 'admin ok' })
   }
 })
 
-app.get('/dashboard', {
+app.get('/user', {
   config: {
     permissions: ['isAuthenticated']
   },
   handler: async (req, reply) => {
-    return { message: 'User Dashboard' }
+    reply.send({ msg: 'user ok' })
   }
 })
+
+app.get('/public', {
+  config: {
+    permissions: ['isPublic']
+  },
+  handler: async (req, reply) => {
+    reply.send({ msg: 'public ok' })
+  }
+})
+
+app.get('/manager', {
+  config: {
+    permissions: ['isAdmin', 'isManager']
+  },
+  handler: async (req, reply) => {
+    reply.send({ msg: 'manager ok' })
+  }
+})
+
+app.listen({ port: 3000 })
 ```
+
+---
+
+## Output Examples
+
+### ✅ Successful Request
+
+```js
+// Simulate a request with role = 'admin'
+curl -H "x-role: admin" http://localhost:3000/admin
+// Response:
+// { "msg": "admin ok" }
+
+curl -H "x-role: admin" http://localhost:3000/manager
+// Response:
+// { "msg": "manager ok" }
+
+curl http://localhost:3000/public
+// Response:
+// { "msg": "public ok" }
+```
+
+### 🚫 Forbidden Request
+
+```js
+// Simulate forbidden request using same app setup
+import Fastify from 'fastify'
+import fastifyPermissions from 'fastify-permissions'
+
+const app = Fastify()
+
+app.addHook('onRequest', async (req) => {
+  req.user = { id: 1, role: 'guest' } // 👈 Not an admin
+})
+
+app.register(fastifyPermissions, {
+  conditions: {
+    isAdmin: async (req) => req.user?.role === 'admin'
+  }
+})
+
+app.get('/admin', {
+  config: {
+    permissions: ['isAdmin']
+  },
+  handler: async (req, reply) => {
+    reply.send({ msg: 'admin ok' })
+  }
+})
+
+app.inject({
+  method: 'GET',
+  url: '/admin'
+}).then(res => {
+  console.log(res.statusCode) // 403
+  console.log(res.json())     // { error: 'Forbidden', permission: 'isAdmin' }
+})
+```
+
+
+```js
+// Simulate a request with role = 'guest'
+curl -H "x-role: guest" http://localhost:3000/admin
+// Response:
+// {
+//   "error": "Forbidden",
+//   "permission": "isAdmin"
+// }
+
+curl -H "x-role: admin" http://localhost:3000/manager
+// Response:
+// {
+//   "error": "Forbidden",
+//   "permission": "isManager"
+// }
+```
+
+---
+
+## License
+
+MIT License © 2025 Krishnadas P.C
+
 
 #  Example
 ## Run the sample app:
